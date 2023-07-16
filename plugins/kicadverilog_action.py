@@ -11,5 +11,8 @@ class KiCadVerilogAction(pcbnew.ActionPlugin):
 
     def Run(self):
         # The entry function of the plugin that is executed on user action
-        from . import kvgui
+        try:
+            from . import kvgui
+        except:
+            import kvgui
         kvgui.launch()
